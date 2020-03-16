@@ -3,6 +3,7 @@
  */
 package com.nestorrojas07.todo.models;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -24,7 +25,7 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "tasks")
-public class Task {
+public class Task implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

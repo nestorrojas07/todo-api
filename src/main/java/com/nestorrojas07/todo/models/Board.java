@@ -3,6 +3,7 @@
  */
 package com.nestorrojas07.todo.models;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.Set;
 
@@ -15,15 +16,20 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @author Nestor Rojas
  *
  */
 @Data
+@Getter
+@Setter
+
 @Entity
 @Table(name = "boards")
-public class Board {
+public class Board implements Serializable{
 	@Id()
 	@Column(name = "id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -8,6 +8,7 @@ import java.util.List;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.nestorrojas07.todo.models.Board;
 import com.nestorrojas07.todo.repositories.BoardRepository;
@@ -16,6 +17,7 @@ import com.nestorrojas07.todo.repositories.BoardRepository;
  * @author Nestor Rojas
  *
  */
+@Service
 public class BoardService {
 	
 	@Autowired
