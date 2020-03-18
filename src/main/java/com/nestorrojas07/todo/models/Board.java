@@ -15,6 +15,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -29,7 +31,11 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "boards")
-public class Board implements Serializable{
+@JsonSerialize
+public class Board implements Serializable
+{
+	private static final long serialVersionUID = 6650327405376806128L;
+
 	@Id()
 	@Column(name = "id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

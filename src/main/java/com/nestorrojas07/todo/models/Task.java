@@ -15,6 +15,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
 import lombok.Data;
 
 /**
@@ -25,8 +27,11 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "tasks")
-public class Task implements Serializable{
-	
+@JsonSerialize
+public class Task implements Serializable
+{
+	private static final long serialVersionUID = 4918783550184879505L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
